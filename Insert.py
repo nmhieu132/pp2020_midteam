@@ -5,7 +5,7 @@ database =r"C:\Users\DELL\Documents\db_file.db"
 class insert:
     def insert_category(con,categorys):
         sql='''INSERT INTO Category(Id,CategoryName)
-               VALUES(?,?) '''
+               VALUES(1,Seafood) '''
         cursor.execute(sql,categorys)
         con.commit()
         return cursor.lastrowid
@@ -22,7 +22,14 @@ class insert:
         return cursor.lastrowid
     def insert_dishes(con,dish):
         sql='''INSERT INTO Dishes(Id,Dish_name,Price,Status,Description,CategoryId,ChefId
-               VALUE(?,?,?,?,?,?,?) '''
+               VALUE(1,Buri,50,Remaining,Must try,1,1)
+                    (2,Grilled cod fish,60,Remaining,Must try,1,1)
+                    (3,Herring fish,250,Remaining,Must try,1,1)
+                    (4,Octopus,50,Remaining,Must try,1,1)
+                    (5,Saba,45,Remaining,Hot sale,1,1)
+                    (6,Salmon,75,Remaining,Hot sale,1,1)
+                    (7,Snapper,85,Remaining,Hot sale,1,1)
+                    (8,Bo bia,15,Remaining,Hot sale,2,2)'''
         cursor.execute(sql,dish)
         return cursor.lastrowid
     def insert_orderedishes(con,odish):
